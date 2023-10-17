@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "702cc35d-a324-42f7-9cf8-9fa67850c4ed",
+		"name": "oracle-jpa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13359435"
+	},
+	"item": [
+		{
+			"name": "saveAllTutorials",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"title\": \"Spring Data\",\r\n        \"description\": \"Spring Data Description\",\r\n        \"grade\": 3,\r\n        \"published\": true\r\n    },\r\n    {\r\n        \"title\": \"Java Spring Boot\",\r\n        \"description\": \"Spring Framework Description\",\r\n        \"grade\": 1,\r\n        \"published\": false\r\n    },\r\n    {\r\n        \"title\": \"Hibernate\",\r\n        \"description\": \"Hibernate ORM Description\",\r\n        \"grade\": 3,\r\n        \"published\": true\r\n    },\r\n    {\r\n        \"title\": \"Spring Boot\",\r\n        \"description\": \"Spring Boot Description\",\r\n        \"grade\": 2,\r\n        \"published\": false\r\n    },\r\n    {\r\n        \"title\": \"Spring JPA\",\r\n        \"description\": \"Spring Data JPA Description\",\r\n        \"grade\": 3,\r\n        \"published\": true\r\n    },\r\n    {\r\n        \"title\": \"Spring Batch\",\r\n        \"description\": \"Spring Batch Description\",\r\n        \"grade\": 4,\r\n        \"published\": true\r\n    },\r\n    {\r\n        \"title\": \"Spring Security\",\r\n        \"description\": \"Spring Security Description\",\r\n        \"grade\": 5,\r\n        \"published\": false\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tutorials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tutorials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTutorials",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tutorials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tutorials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByPublishedAndLevelAsc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tutorials/published?published=true&sortBy=title",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tutorials",
+						"published"
+					],
+					"query": [
+						{
+							"key": "published",
+							"value": "true"
+						},
+						{
+							"key": "sortBy",
+							"value": "title"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByTitleContainingSorted",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tutorials/title?sortBy=title",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tutorials",
+						"title"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "title"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTutorialsSortByIdDesc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tutorials/sorted",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tutorials",
+						"sorted"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTutorialsSortByTitleAsc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tutorials/sorted?sort=title,asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tutorials",
+						"sorted"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "title,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTutorialsPageAndSort",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tutorials/byTitleSorted?title=at&sort=id,desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tutorials",
+						"byTitleSorted"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "at"
+						},
+						{
+							"key": "sort",
+							"value": "id,desc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
